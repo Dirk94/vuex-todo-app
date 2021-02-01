@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Todo App</h1>
-
+		<input type="text" @keyup.enter="addTodo()" v-model="message" placeholder="Add a to-do">
 		<ul>
 			<li v-for="todo in todos" :key="todo.message">
 				{{ todo.message }}
@@ -11,7 +11,22 @@
 </template>
 <script>
 export default {
-  name: 'App',
+	name: 'App',
+	
+	data() { return {
+		message: "",
+	} },
+
+	methods: {
+		addTodo() {
+			this.$store.commit("ADD_TODO", {
+				completed: false,
+				message: this.message,
+			});
+			this.message = "";
+		}
+	},
+
 	computed: {
 		todos() {
 			return this.$store.state.todos;
@@ -20,6 +35,16 @@ export default {
 }
 </script>
 <style>
+label, input {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	display: block;	
+}
+label {
+	text-align: center;
+	display: block;
+}
 
 #app {
 	padding-top: 60px;
