@@ -19,6 +19,8 @@ export default {
 
 	methods: {
 		addTodo() {
+			// You could also dispatch an action to the store here.
+
 			this.$store.commit("ADD_TODO", {
 				completed: false,
 				message: this.message,

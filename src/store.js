@@ -23,5 +23,14 @@ export default new Vuex.Store({
 			state.todos.push(todo);
 		}
 	},
-	actions: {},
+
+	actions: {
+		async addTodo({ commit }, todo) {
+			// This is a fake function to illustrate the example.
+			const response = await postRequestToTheAPI(todo);
+			if (response.isOk) {
+				commit('ADD_TODO', todo);
+			}
+		}
+	},
 });
