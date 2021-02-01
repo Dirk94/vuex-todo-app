@@ -1,24 +1,11 @@
-# vuex-by-example
+# Todo Vue App
 
-## Project setup
-```
-npm install
-```
+Source code of my Medium blog post:
+https://medium.com/p/270f83c8d12a
 
-### Compiles and hot-reloads for development
+## Getting Started
 ```
+npm i
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
